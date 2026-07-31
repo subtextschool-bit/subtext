@@ -870,6 +870,17 @@
             .hero-video-bg { opacity: 0.24; }
         }
 
+        @media (max-width: 768px) {
+            .hero img,
+            .hero picture,
+            .hero [class*="mascot"],
+            .hero [class*="Mascot"],
+            .hero [class*="animal"],
+            .hero [class*="pet"] {
+                display: none !important;
+            }
+        }
+
 
         /* === ОБНОВЛЕНИЯ ПО ЗАДАЧЕ: кабинет, преимущества, цены, синяя форма === */
         .account-link {
