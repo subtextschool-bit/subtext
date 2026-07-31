@@ -1160,6 +1160,23 @@
             .copyright { padding-top: 18px; }
         }
 
+
+        /* === ПРЕДМЕТЫ В HERO В ОДНУ СТРОКУ === */
+        .subject-tags {
+            flex-wrap: nowrap;
+            max-width: none;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .subject-tags::-webkit-scrollbar { display: none; }
+        .subject-tags span { white-space: nowrap; }
+        @media (max-width: 768px) {
+            .subject-tags {
+                justify-content: flex-start;
+                padding-bottom: 4px;
+            }
+        }
+
     </style>
     <!-- EmailJS SDK -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
