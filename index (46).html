@@ -395,19 +395,19 @@
         }
 
         /* === ПОДВАЛ === */
-        footer { background: #111827; color: #9ca3af; padding: 60px 0 25px; }
+        footer { background: #111827; color: #9ca3af; padding: 42px 0 20px; }
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 24px;
+            margin-bottom: 24px;
         }
         .footer-col h4 { font-size: 1.2rem; margin-bottom: 15px; color: #fff; }
         .footer-col a { display: block; margin-bottom: 10px; }
         .footer-col a:hover { color: #fff; }
         .copyright {
             text-align: center;
-            padding-top: 25px;
+            padding-top: 18px;
             border-top: 1px solid #374151;
             font-size: 0.9rem;
             color: #6b7280;
@@ -1034,6 +1034,110 @@
             .btn::before { display: none; }
         }
 
+
+        /* === FAQ: ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ === */
+        .faq {
+            border-top: 1px solid rgba(191, 219, 254, 0.56);
+            background:
+                radial-gradient(circle at 18% 16%, rgba(14, 165, 233, 0.16), transparent 27%),
+                radial-gradient(circle at 86% 18%, rgba(37, 99, 235, 0.14), transparent 28%),
+                linear-gradient(180deg, #f8fbff 0%, #eff6ff 100%);
+        }
+        .faq-panel {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 28px;
+            border: 2px solid rgba(37, 99, 235, 0.72);
+            border-radius: 28px;
+            background: rgba(219, 234, 254, 0.68);
+            box-shadow:
+                0 0 0 1px rgba(37, 99, 235, 0.12),
+                0 24px 58px rgba(37, 99, 235, 0.14);
+            backdrop-filter: blur(12px);
+            animation: refinedFadeUp 0.75s ease both;
+        }
+        .faq-item {
+            overflow: hidden;
+            border: 1px solid rgba(96, 165, 250, 0.34);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.82);
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+        }
+        .faq-item + .faq-item { margin-top: 14px; }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            width: 100%;
+            padding: 20px 22px;
+            border: 0;
+            background: transparent;
+            color: #0f172a;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 800;
+            font-size: 1.05rem;
+            line-height: 1.35;
+            text-align: left;
+        }
+        .faq-arrow {
+            flex: 0 0 auto;
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            border-radius: 999px;
+            color: #1d4ed8;
+            background: #dbeafe;
+            transition: transform 0.22s ease, background 0.22s ease;
+        }
+        .faq-question[aria-expanded="true"] .faq-arrow {
+            transform: rotate(180deg);
+            background: #bfdbfe;
+        }
+        .faq-answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.25s ease;
+        }
+        .faq-question[aria-expanded="true"] + .faq-answer { grid-template-rows: 1fr; }
+        .faq-answer-inner {
+            overflow: hidden;
+            color: #475569;
+            line-height: 1.75;
+        }
+        .faq-answer-inner p {
+            padding: 0 22px 20px;
+        }
+        .work-link {
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin-top: 8px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            color: #fff !important;
+            font-weight: 800;
+            background: linear-gradient(135deg, #2563eb, #0ea5e9);
+            box-shadow: 0 14px 28px rgba(37, 99, 235, 0.26);
+        }
+        .work-link:hover { transform: translateY(-2px); }
+        @media (max-width: 768px) {
+            .faq-panel { padding: 18px; border-radius: 22px; }
+            .faq-question { padding: 17px 16px; font-size: 1rem; }
+            .faq-answer-inner p { padding: 0 16px 17px; }
+            footer { padding: 42px 0 20px; }
+            .footer-grid { gap: 22px; margin-bottom: 24px; }
+            .footer-col { padding: 14px; }
+        }
+        @media (max-width: 420px) {
+            footer { padding: 34px 0 18px; }
+            .footer-grid { gap: 16px; margin-bottom: 18px; }
+            .copyright { padding-top: 18px; }
+        }
+
     </style>
     <!-- EmailJS SDK -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -1258,6 +1362,59 @@
         </div>
     </section>
 
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Часто задаваемые вопросы</h2>
+            <p class="section-desc">Собрали ответы на вопросы, которые чаще всего задают ученики и родители.</p>
+            <div class="faq-panel">
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Почему такие низкие цены?</span>
+                        <span class="faq-arrow" aria-hidden="true">⌄</span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>Мы держим низкие цены, потому что считаем, что образование должно быть доступно каждому.</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Что будет если вы завтра поднимите цены?</span>
+                        <span class="faq-arrow" aria-hidden="true">⌄</span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>Цена сохраняется за учеником на год, поэтому за стоимость можно не беспокоиться.</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Где происходит обучение?</span>
+                        <span class="faq-arrow" aria-hidden="true">⌄</span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>На нашей собственной платформе.</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Можно ли сменить преподавателя?</span>
+                        <span class="faq-arrow" aria-hidden="true">⌄</span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>Конечно, в любой момент обучения.</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Какие предметы у вас есть?</span>
+                        <span class="faq-arrow" aria-hidden="true">⌄</span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>Английский, французский, испанский, математика, физика, русский, биология и химия.</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Я — взрослый, могу ли я учить язык с вами?</span>
+                        <span class="faq-arrow" aria-hidden="true">⌄</span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>Конечно, мы работаем как с детьми, так и со взрослыми.</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ФОРМА ЗАЯВКИ -->
     <section id="apply" class="apply">
         <div class="container">
@@ -1343,6 +1500,7 @@
                     <h4>Навигация</h4>
                     <a href="#about">О школе</a>
                     <a href="#teachers">Преподаватели</a>
+                    <a href="#faq">FAQ</a>
                     <a href="#apply">Записаться</a>
                 </div>
     
@@ -1357,6 +1515,7 @@
                     <h4>Контакты</h4>
                     <a href="mailto:subtextschool@gmail.com">subtextschool@gmail.com</a>
                     <a href="https://vk.ru/club235482007" target="_blank">ВКонтакте</a>
+                    <a href="https://t.me/P1289R" class="work-link" target="_blank" rel="noopener">Хочу работать с вами</a>
                 </div>
             </div>
             <div class="copyright">
@@ -1366,6 +1525,13 @@
     </footer>
 
    <script>
+    document.querySelectorAll('.faq-question').forEach((question) => {
+        question.addEventListener('click', () => {
+            const isExpanded = question.getAttribute('aria-expanded') === 'true';
+            question.setAttribute('aria-expanded', String(!isExpanded));
+        });
+    });
+
     document.getElementById('applyForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
