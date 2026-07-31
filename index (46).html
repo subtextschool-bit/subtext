@@ -2,11 +2,13 @@
 <html lang="ru">
 <head>
     <meta property="og:title" content="Subtext — Онлайн-платформа нового поколения">
-<meta property="og:description" content="Современное обучение для детей и взрослых. Живые уроки и гарантия результата.">
+<meta property="og:description" content="Subtext — образовательная онлайн-платформа для детей и взрослых: английский, французский, испанский, математика, физика, русский язык, биология и химия. Живые уроки, мини-группы и индивидуальные занятия.">
 <meta property="og:type" content="https://subtext-site.vercel.app/">
     <meta property="og:image" content="https://i.postimg.cc/B8qskyFS/5260368119446839860.jpg">
     
     <meta charset="UTF-8">
+    <meta name="description" content="Subtext — образовательная онлайн-платформа для детей и взрослых. Онлайн-уроки по английскому, французскому, испанскому, математике, физике, русскому языку, биологии и химии с преподавателями на собственной платформе.">
+    <meta name="keywords" content="онлайн школа, образовательная платформа, репетитор онлайн, английский онлайн, французский онлайн, испанский онлайн, математика онлайн, физика онлайн, русский язык онлайн, биология онлайн, химия онлайн, подготовка к ОГЭ, подготовка к ЕГЭ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subtext — Онлайн-платформа</title>
     <style>
@@ -80,6 +82,14 @@
         }
         .hero h1 { font-size: 2.8rem; margin-bottom: 15px; line-height: 1.2; color: #111827; }
         .hero p { max-width: 700px; margin: 0 auto 30px; font-size: 1.15rem; color: #4b5563; }
+        .hero-layout { display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; gap: 34px; }
+        .hero-content { position: relative; z-index: 2; }
+        .hero-seo-text { max-width: 760px; margin: 0 auto 24px; font-size: 1rem; color: #52637a; line-height: 1.75; }
+        .subject-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: -8px auto 28px; max-width: 760px; }
+        .subject-tags span { padding: 6px 11px; border: 1px solid rgba(96, 165, 250, 0.34); border-radius: 999px; background: rgba(255, 255, 255, 0.72); color: #1d4ed8; font-size: 0.86rem; font-weight: 700; box-shadow: 0 8px 18px rgba(37, 99, 235, 0.08); }
+        .hero-mascot { position: relative; z-index: 1; width: min(310px, 74vw); margin: 8px auto 0; perspective: 900px; transform-style: preserve-3d; animation: mascotFloat 6.5s ease-in-out infinite; }
+        .hero-mascot::before { content: ""; position: absolute; left: 50%; bottom: 2%; width: 72%; height: 16%; transform: translateX(-50%) rotateX(68deg); border-radius: 50%; background: radial-gradient(circle, rgba(15, 23, 42, 0.22), transparent 68%); filter: blur(6px); z-index: -1; }
+        .hero-mascot img { width: 100%; transform: rotateY(-12deg) rotateX(4deg); filter: drop-shadow(0 28px 26px rgba(15, 23, 42, 0.22)) drop-shadow(0 0 30px rgba(96, 165, 250, 0.38)); }
         .badge {
             display: inline-block;
             background: #dbeafe;
@@ -91,6 +101,17 @@
             margin-bottom: 20px;
         }
         .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        @keyframes mascotFloat {
+            0%, 100% { transform: translate3d(0, 0, 0) rotate(-1deg); }
+            50% { transform: translate3d(0, -14px, 0) rotate(1.5deg); }
+        }
+        @media (min-width: 980px) {
+            .hero { text-align: left; }
+            .hero-layout { grid-template-columns: minmax(0, 1fr) 340px; gap: 48px; }
+            .hero h1, .hero p, .hero-seo-text { margin-left: 0; margin-right: 0; }
+            .hero-buttons, .subject-tags { justify-content: flex-start; }
+            .hero-mascot { width: 340px; margin: 0; justify-self: end; transform: translateX(8px); }
+        }
 
         /* === ПРЕИМУЩЕСТВА === */
         .features {
@@ -865,6 +886,7 @@
         }
         @media (prefers-reduced-motion: reduce) {
             .hero-video-bg { animation: none; }
+            .hero-mascot { animation: none; }
         }
         @media (max-width: 768px) {
             .hero-video-bg { opacity: 0.24; }
@@ -1189,12 +1211,30 @@
     <section class="hero">
           <div class="hero-video-bg" aria-hidden="true"></div>
         <div class="container">
-            <div class="badge">🎓 Набор открыт — Осень 2026</div>
-            <h1>Учись онлайн с лучшими педагогами</h1>
-            <p>Современная образовательная платформа для детей и взрослых. Индивидуальный подход, живые уроки и реальные результаты.</p>
-            <div class="hero-buttons">
-                <a href="#apply" class="btn">Записаться на урок</a>
-                <a href="#about" class="btn btn-outline">Узнать больше</a>
+            <div class="hero-layout">
+                <div class="hero-content">
+                    <div class="badge">🎓 Набор открыт — Осень 2026</div>
+                    <h1>Учись онлайн с лучшими педагогами</h1>
+                    <p>Subtext — образовательная онлайн-платформа для детей и взрослых с живыми уроками, индивидуальным подходом и понятным маршрутом до результата.</p>
+                    <p class="hero-seo-text">У нас можно заниматься английским, французским, испанским, математикой, физикой, русским языком, биологией и химией: индивидуально или в мини-группах на собственной платформе.</p>
+                    <div class="subject-tags" aria-label="Предметы обучения">
+                        <span>Английский</span>
+                        <span>Французский</span>
+                        <span>Испанский</span>
+                        <span>Математика</span>
+                        <span>Физика</span>
+                        <span>Русский</span>
+                        <span>Биология</span>
+                        <span>Химия</span>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#apply" class="btn">Записаться на урок</a>
+                        <a href="#about" class="btn btn-outline">Узнать больше</a>
+                    </div>
+                </div>
+                <div class="hero-mascot" aria-hidden="true">
+                    <img src="https://i.imgur.com/zJry1aD.png" alt="">
+                </div>
             </div>
         </div>
     </section>
